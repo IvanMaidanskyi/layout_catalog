@@ -35,31 +35,40 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #060b35;
+    color: $main-text-color;
     font-weight: 500;
     transition: color 300ms ease;
+
+    &:hover {
+      color: #00acdc;
+    }
 
     &::after {
       content: '';
       display: block;
       position: absolute;
       bottom: 0;
-      left: 0;
+      left: 50%;
       width: 0;
       height: 4px;
       background-color: var(--blue);
       border-radius: 8px;
+      transition: width 300ms ease, left 300ms ease;
+    }
 
-      transition: width 300ms ease;
+    &:hover::after {
+      width: 100%;
+      left: 0;
+    }
 
-      &:hover,
-      &.is-active {
-        color: #00acdc;
-      }
+    &.is-active {
+      color: #00acdc;
 
-      &:hover::after {
+        &::after {
         width: 100%;
+        left: 0;
       }
     }
   }
 }
+
