@@ -5,15 +5,11 @@
   padding: 32px 16px 16px;
   box-sizing: border-box;
   border: solid 1px $color-border;
-  transition: transform 300ms;
+  transition: transform 300ms ease;
 
   &:hover {
     transform: scale(1.2);
     transform-origin: center;
-    &__title {
-      transition: color 300ms;
-      color: #34568b;
-    }
   }
 
   &__image {
@@ -27,6 +23,11 @@
     font-size: 12px;
     font-weight: 500;
     line-height: 18px;
+    transition: color 300ms ease;
+  }
+
+  &:hover &__title {
+    color: #34568b;
   }
 
   &__product-code {
@@ -35,6 +36,17 @@
     font-weight: 400;
     line-height: 14px;
     color: $color-gray;
+  }
+
+  &__review {
+    display: flex;
+    width: 53px;
+    height: 16px;
+    align-items: flex-end;
+    justify-content: right;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 16px;
   }
 
   &__rating {
@@ -85,11 +97,12 @@
       font-weight: 700;
       text-decoration: none;
 
+      transition: background-color 300ms ease;
+
       &:hover {
-        transition: background-color 300ms;
         border: solid 1px $color-accent;
-        background-color: #fff;
-        color: #00acdc;
+        background-color: $color-white;
+        color: $color-accent;
       }
     }
   }
